@@ -14,15 +14,24 @@ import javax.xml.bind.annotation.XmlType;
  * @author juanc
  */
 @XmlRootElement(name = "persona")
-@XmlType(propOrder = {"id", "fullName", "age"})
+@XmlType(propOrder = {"id", "fullName", "age", "salary"})
 public class Person {
 
     private int age;
     private String fullName;
     private int id;
+    private double salary;
 
     public Person() {
 
+    }
+    @XmlElement
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     @XmlElement

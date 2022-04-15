@@ -5,7 +5,6 @@
 package co.edu.unipiloto.ws.testws.services;
 
 import co.edu.unipiloto.ws.testws.entidad.Person;
-import co.edu.unipiloto.ws.testws.entidad.Salary;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -41,8 +40,6 @@ public class Service {
         }
     }
     
-    private static Map<Integer, Salary> salary = new HashMap<Integer, Salary>();
-
     
     @GET
     @Path("/getPersonByIdXML/{id}")
@@ -74,10 +71,6 @@ public class Service {
             avgSalary += persons.get(i).getSalary();
         }
         avgSalary = avgSalary/persons.size();
-        
-        Salary sal = new Salary();
-        sal.setSalary(avgSalary);
-        salary.put(1, sal);
         return "<salary>"+ avgSalary +"</salary>";
     }
     
